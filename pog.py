@@ -4,11 +4,11 @@ from telebot import TeleBot, types
 
 # Зареєструйте бота з @BotFather
 bot = TeleBot('YOU_BOT_TOKEN')
-openweathermap = "&appid=YOU_OPENWEATHER_TOKEN&units=metric"
+openweathermap = "YOU_OPENWEATHER_TOKEN"
 
 # Отримайте погоду з OpenWeatherMap
 def get_weather(city):
-    url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + openweathermap
+    url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&appid=" + openweathermap + "&units=metric"
     response = requests.get(url)
     if response.status_code == 200:
         data = json.loads(response.content)
