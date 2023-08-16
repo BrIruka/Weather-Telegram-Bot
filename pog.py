@@ -15,7 +15,7 @@ def get_weather(city):
         return data
     else:
         raise Exception('Error getting weather data')
-
+         
 # Обробник повідомлень
 @bot.message_handler(commands=['start'])
 def start(message):
